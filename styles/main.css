@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: var(--primary-font)
 }
 html,body {
     height: 100%;
@@ -45,8 +46,6 @@ aside header{
     align-items: center;
     justify-content: space-between;
     padding: 10px;
-    
-
 
 }
 
@@ -60,6 +59,12 @@ aside header{
     align-items: center;
     gap: 15px;
 }
+aside li img {
+    border-radius: 50%;
+}
+aside li {
+    gap:10px;
+}
 
 .actions button svg {
     width: 20px;    
@@ -72,9 +77,8 @@ aside header{
     background-color:var(--grey-900);
     color: white;
     transition: transform .2s;
-    
-
 }
+
 .actions button:hover{
     background-color: var(--grey-700);
     transform:translateY(-2px) ;
@@ -117,6 +121,7 @@ aside header{
     align-items: center;
 }
 
+
 /*Messages panel*/
 .chat-header {
     background-color: azure;
@@ -136,38 +141,48 @@ aside header{
     color: var(--grey-700)
 }
 
+/*FOOTER*/
+
 footer{
     display: flex;
     justify-content: space-between;
     align-items: center;
     background-color: var(--grey-500);
+    padding: 13px;
+    border-top: solid #9f9fa149;
+    gap: 6px;
 }
 
 footer svg {
-width: 40px;
+width: 100%;
+height: 100%;
+padding: 3px;
 }
 
 
-
-
-
 footer form {
-    flex:1; 
+    flex:1;    
+}
+
+footer button{
+    width: 35px;
+    height: 35px;
 }
 
 footer form textarea{
     width: 100%;
     border-radius: 10px;
-    border:none;
-    
-
+    border:none;    
+    padding-top: 10px;
 }
 
 footer .attach {
     background-color: transparent;
     border: none;
     cursor: pointer;
-    color: var(--grey-700);}
+    color: var(--grey-700);
+    transition: .3s;
+}
 
 footer .attach:hover{
     color: var(--grey-800);
@@ -175,21 +190,22 @@ footer .attach:hover{
 
 footer .send {
     border: none;
-    background-color: var(--green-300);
+    background-color: var(--green-400);
     color: white;
-    width: 45px;
-    height: 30px;
+    
     border-radius: 20px;
     padding: 5px;
     cursor: pointer;
-    transition: .1s;
+    transition: .3s;
 }
 
 footer .send:hover{
-    background-color: var(--green-400);
+    background-color: var(--green-300);
     transform: scale(0.9);
 }
-/*Mensajes*/
+
+/*MENSAJES*/
+
 .message {
   background-color: var(--grey-300);
   border-radius: 10px;
@@ -223,8 +239,14 @@ footer .send:hover{
 
 
 /*responsive design*/
-@media (max-width: 880px){
+@media (max-width:480px){
     aside{
-    display: none;
-}
+        display: none;
+        }
+    .app{
+       
+        grid-template-columns: 1fr;
+
+    }
+
 }
