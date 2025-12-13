@@ -204,6 +204,7 @@ footer .send:hover{
     flex-direction: column;
     gap: 20px;
     padding: 15px;
+      overflow-y: auto;
     
 }
 
