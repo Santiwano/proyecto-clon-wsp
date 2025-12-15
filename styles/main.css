@@ -19,6 +19,8 @@ html,body {
   --green-400: #138b80;
   --green-300: #2dca7a;
   --green-100: #dcf8c6;
+  --grey-50:#EFF0F4;
+  --grey-60:#1F2C34;
   --primary-font: "Roboto", sans-serif;
 }
 body{
@@ -27,10 +29,10 @@ body{
 }
 
 .app {
-    
+    height: 100%;
     background-color: white;
     display: grid;
-    grid-template-columns: 320px 1fr ;
+    grid-template-columns: 350px 1fr ;
     overflow: hidden;
     border-radius: 10px;
     box-shadow: 0 12px 40px rgba(0, 0, 0, 0.25);
@@ -89,11 +91,13 @@ aside li {
 }
 .search{
     background-color: var(--grey-900);
-    padding: 5px;
+    padding: 10px 10px;
+    border-bottom: solid var(--grey-60) 1px;
+    border-top: solid var(--grey-60) 1px ;
 }
 
 .search form input{
-    background-color: var(--grey-700);
+    background-color: var(--grey-60);
     width: 100%;
     display: block;
     border: none;
@@ -103,28 +107,63 @@ aside li {
     color: white;
 }
 .search input:focus {
-    outline: 1px solid var(--grey-300);
+    outline: 2px solid var(--grey-700);
 }
+
+/*ASIDE CHATS*/
+
+.user-chat img {
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+}
+
+.user-chat:hover{
+    background-color: var(--grey-600);
+    border-radius: 10px;
+    
+}
+
 
 .chats {
     background-color: var(--grey-900);
-    padding: 0 20px;
+    padding: 10px;
 }
-.chats ul{
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: 10px
-}
+
 .user-chat {
     display: flex;
     align-items: center;
+    transition: .2s;
+    padding: 7px;
+
+}
+
+.chat-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.chat-info h3 {
+  font-size: 16px;
+  margin: 0;
+}
+
+.chat-info p {
+  font-size: 14px;
+  margin: 0;
+  color: #667781;
 }
 
 
 /*Messages panel*/
+
+.chat-panel {
+    display: flex;
+    flex-direction: column;
+}
 .chat-header {
-    background-color: azure;
+    background-color:var(--grey-50);
     border-bottom: 1px solid var(--grey-700);
     display: flex;
     padding: 10px;
@@ -135,6 +174,9 @@ aside li {
 
 .chat-header img {
     border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    object-fit:cover;
 }
 
 .chat-header p{
@@ -147,8 +189,8 @@ footer{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: var(--grey-500);
-    padding: 13px;
+    background-color: var(--grey-50);
+    padding:13px;
     border-top: solid #9f9fa149;
     gap: 6px;
 }
@@ -162,6 +204,7 @@ padding: 3px;
 
 footer form {
     flex:1;    
+    transition: .3s;
 }
 
 footer button{
@@ -172,7 +215,8 @@ footer button{
 footer form textarea{
     width: 100%;
     border-radius: 10px;
-    border:none;    
+    border:none;
+    padding: 0 10px;    
     padding-top: 10px;
 }
 
@@ -192,11 +236,12 @@ footer .send {
     border: none;
     background-color: var(--green-400);
     color: white;
-    
     border-radius: 20px;
     padding: 5px;
     cursor: pointer;
     transition: .3s;
+    height:40px;
+    width: 50px;
 }
 
 footer .send:hover{
@@ -239,7 +284,7 @@ footer .send:hover{
 
 
 /*responsive design*/
-@media (max-width:480px){
+@media (max-width:665px){
     aside{
         display: none;
         }
